@@ -1,0 +1,1318 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;100;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.cardContainer {
+    width: 1500px;
+    height: 700px;
+    background: #fff;
+    box-shadow: 0 0 10px #ccc;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+header {
+    background: #2ECA7F;
+    padding: 25px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px 15px 0  0;
+    z-index: 20;
+}
+header .leftSide {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+header .leftSide .imgBox {
+    height: 100px;
+    width: 100px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+header .leftSide .imgBox svg {
+    height: 100%;
+    width: 100%;
+}
+header .leftSide .text {
+    color: #fff;
+}
+header .leftSide .text h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+header .leftSide .text p {
+    letter-spacing: 2px;
+    font-size: 17px;
+    font-weight: 500;
+}
+header .rightSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header .rightSide p {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+header .rightSide ul {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+header .rightSide ul li {
+    list-style: none;
+    margin-right: 15px;
+}
+header .rightSide ul li:last-child {
+    margin-right: 0;
+}
+header .rightSide ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #fff;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+header .rightSide ul li a:hover {
+    border-color: #fff;
+    background: transparent;
+}
+header .rightSide ul li a i {
+    color: #2ECA7F;
+}
+header .rightSide ul li a:hover i {
+    color: #fff;
+}
+
+main {
+    display: flex;
+    position: relative;
+}
+main .side {
+    width: 250px;
+    padding: 30px 0;
+    border-right: 1px solid #f3f3f3;
+    margin-right: 50px;
+    position: relative;
+}
+main #toggle {
+    position: absolute;
+    top: -80px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid transparent;
+    z-index: 10000;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    visibility: hidden;
+    pointer-events: none;
+    cursor: pointer;
+}
+main #toggle::before {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background: #2ECA7F;
+    transform: translateY(-7px);
+    box-shadow: 0 7px 0 #2ECA7F;
+    transition: 0.2s;
+}
+main #toggle::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background: #2ECA7F;
+    transform: translateY(7px);
+    transition: 0.2s;
+}
+main .side ul {
+    display: flex;
+    flex-direction: column;
+}
+main .side ul li {
+    text-align: left;
+    list-style: none;
+    margin: 22px 0;
+    position: relative;
+    text-decoration: none;
+    color: #343A40;
+    font-size: 17px;
+    font-weight: 500;
+    display: inline-block;
+    padding-left: 37px;
+    cursor: pointer;
+}
+main .side ul li:hover,
+main .side ul li.active {
+    color: #2ECA7F;
+}
+main .side ul li.active::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: #2ECA7F;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+main .side ul li i {
+    margin-right: 7px;
+}
+/*=========================
+    Start homeContent
+===========================*/
+
+main .homeContent {
+    display: flex;
+    padding-right: 60px;
+    transition: 0.3s;
+    pointer-events: all;
+}
+/* ------ Start moving content ------*/
+main .homeContent.aboutActive {
+    transform: translateY(-1100px);
+    pointer-events: none;
+}
+main .homeContent.resumeActive {
+    transform: translateY(calc(-1100px * 2));
+    pointer-events: none;
+}
+main .homeContent.servicesActive {
+    transform: translateY(calc(-1100px * 3));
+    pointer-events: none;
+}
+main .homeContent.portfolioActive {
+    transform: translateY(calc(-1100px * 4));
+    pointer-events: none;
+}
+main .homeContent.blogActive {
+    transform: translateY(calc(-1100px * 5));
+    pointer-events: none;
+}
+main .homeContent.contactActive {
+    transform: translateY(calc(-1100px * 6));
+    pointer-events: none;
+}
+/* ------ End moving content ------*/
+main .homeContent .imgBox {
+    width: 60%;
+    margin-right: 50px;
+}
+main .homeContent .imgBox svg {
+    width: 100%;
+}
+main .homeContent .content {
+    padding-top: 75px;
+}
+main .homeContent .content h2 {
+    margin-bottom: 35px;
+    position: relative;
+    font-size: 30px;
+}
+main .homeContent .content h2::before {
+    content: '';
+    position: absolute;
+    width: 145px;
+    height: 1.5px;
+    background: #2ECA7F;
+    bottom: -5px;
+}
+main .homeContent .content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    width: 55px;
+    height: 9px;
+    background: #2ECA7F;
+    border-radius: 50px;
+}
+main .homeContent .content p {
+    color: #6d6d6d;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+main .homeContent .contact > .title {
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 17px;
+    color: #343A40;
+}
+main .homeContent .contact > .title .detail {
+    font-weight: 400;
+    text-decoration: none;
+    color: #6d6d6d;
+}
+main .homeContent .contact > .title a:hover {
+    color: #343A40;
+}
+main .homeContent .contact .btn {
+    text-decoration: none;
+    display: inline-block;
+    background: #2ECA7F;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+main .homeContent .contact .btn:hover {
+    border-color: #2ECA7F;
+    background: #fff;
+}
+main .homeContent .contact .btn .icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+main .homeContent .contact .btn:hover .icon {
+    background: #2ECA7F;
+}
+main .homeContent .contact .btn .icon i {
+    color: #2ECA7F;
+    transition: 0.3s;
+}
+main .homeContent .contact .btn:hover .icon i {
+    color: #fff;
+}
+main .homeContent .contact .btn .title {
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+main .homeContent .contact .btn:hover .title {
+    color: #2ECA7F;
+}
+
+/*=========================
+    End homeContent
+===========================*/
+
+/*=========================
+    Start aboutContent
+===========================*/
+
+main .aboutContent {
+    display: flex;
+    padding-right: 60px;
+    position: absolute;
+    left: 220px;
+    top: 0;
+    transform: translateY(1100px);
+    transition: 0.3s;
+    pointer-events: none;
+}
+/* ------ Start moving content ------*/
+main .aboutContent.aboutActive {
+    transform: translateY(0);
+    pointer-events: all;
+}
+main .aboutContent.resumeActive {
+    transform: translateY(-1100px);
+    pointer-events: none;
+}
+main .aboutContent.servicesActive {
+    transform: translateY(calc(-1100px * 2));
+    pointer-events: none;
+}
+main .aboutContent.portfolioActive {
+    transform: translateY(calc(-1100px * 3));
+    pointer-events: none;
+}
+main .aboutContent.blogActive {
+    transform: translateY(calc(-1100px * 4));
+    pointer-events: none;
+}
+main .aboutContent.contactActive {
+    transform: translateY(calc(-1100px * 5));
+    pointer-events: none;
+}
+/* ------ End moving content ------*/
+main .aboutContent .imgBox {
+    width: 60%;
+    margin-right: 50px;
+    position: relative;
+}
+main .aboutContent .imgBox svg {
+    width: 100%;
+    position: relative;
+    bottom: 90px;
+}
+main .aboutContent .content {
+    padding-top: 75px;
+}
+main .aboutContent .content h2 {
+    margin-bottom: 35px;
+    position: relative;
+    font-size: 30px;
+}
+main .aboutContent .content h2::before {
+    content: '';
+    position: absolute;
+    width: 145px;
+    height: 1.5px;
+    background: #2ECA7F;
+    bottom: -5px;
+}
+main .aboutContent .content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    width: 55px;
+    height: 9px;
+    background: #2ECA7F;
+    border-radius: 50px;
+}
+main .aboutContent .content p {
+    color: #6d6d6d;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+main .aboutContent .contact > .title {
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 17px;
+    color: #343A40;
+}
+main .aboutContent .contact > .title .detail {
+    font-weight: 400;
+    text-decoration: none;
+    color: #6d6d6d;
+}
+main .aboutContent .contact > .title a:hover {
+    color: #343A40;
+}
+main .aboutContent .contact .btn {
+    text-decoration: none;
+    display: inline-block;
+    background: #2ECA7F;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+main .aboutContent .contact .btn:hover {
+    border-color: #2ECA7F;
+    background: #fff;
+}
+main .aboutContent .contact .btn .icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+main .aboutContent .contact .btn:hover .icon {
+    background: #2ECA7F;
+}
+main .aboutContent .contact .btn .icon i {
+    color: #2ECA7F;
+    transition: 0.3s;
+}
+main .aboutContent .contact .btn:hover .icon i {
+    color: #fff;
+}
+main .aboutContent .contact .btn .title {
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+main .aboutContent .contact .btn:hover .title {
+    color: #2ECA7F;
+}
+
+/*=========================
+    End aboutContent
+===========================*/
+
+/*=========================
+    Start resumeContent
+===========================*/
+
+main .resumeContent {
+    display: flex;
+    padding-right: 60px;
+    position: absolute;
+    left: 220px;
+    top: 0;
+    transform: translateY(calc(1100px * 2));
+    transition: 0.3s;
+    pointer-events: none;
+}
+/* ------ Start moving content ------*/
+main .resumeContent.resumeActive {
+    transform: translateY(0);
+    pointer-events: all;
+}
+main .resumeContent.servicesActive {
+    transform: translateY(-1100px);
+    pointer-events: none;
+}
+main .resumeContent.portfolioActive {
+    transform: translateY(calc(-1100px * 2));
+    pointer-events: none;
+}
+main .resumeContent.blogActive {
+    transform: translateY(calc(-1100px * 3));
+    pointer-events: none;
+}
+main .resumeContent.contactActive {
+    transform: translateY(calc(-1100px * 4));
+    pointer-events: none;
+}
+/* ------ End moving content ------*/
+main .resumeContent .imgBox {
+    width: 60%;
+    margin-right: 50px;
+    position: relative;
+}
+main .resumeContent .imgBox svg {
+    width: 100%;
+    position: relative;
+    bottom: 80px;
+}
+main .resumeContent .content {
+    padding-top: 75px;
+}
+main .resumeContent .content h2 {
+    margin-bottom: 35px;
+    position: relative;
+    font-size: 30px;
+}
+main .resumeContent .content h2::before {
+    content: '';
+    position: absolute;
+    width: 145px;
+    height: 1.5px;
+    background: #2ECA7F;
+    bottom: -5px;
+}
+main .resumeContent .content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    width: 55px;
+    height: 9px;
+    background: #2ECA7F;
+    border-radius: 50px;
+}
+main .resumeContent .content p {
+    color: #6d6d6d;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+main .resumeContent .contact > .title {
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 17px;
+    color: #343A40;
+}
+main .resumeContent .contact > .title .detail {
+    font-weight: 400;
+    text-decoration: none;
+    color: #6d6d6d;
+}
+main .resumeContent .contact > .title a:hover {
+    color: #343A40;
+}
+main .resumeContent .contact .btn {
+    text-decoration: none;
+    display: inline-block;
+    background: #2ECA7F;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+main .resumeContent .contact .btn:hover {
+    border-color: #2ECA7F;
+    background: #fff;
+}
+main .resumeContent .contact .btn .icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+main .resumeContent .contact .btn:hover .icon {
+    background: #2ECA7F;
+}
+main .resumeContent .contact .btn .icon i {
+    color: #2ECA7F;
+    transition: 0.3s;
+}
+main .resumeContent .contact .btn:hover .icon i {
+    color: #fff;
+}
+main .resumeContent .contact .btn .title {
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+main .resumeContent .contact .btn:hover .title {
+    color: #2ECA7F;
+}
+
+/*=========================
+    End resumeContent
+===========================*/
+
+/*=========================
+    Start servicesContent
+===========================*/
+
+main .servicesContent {
+    display: flex;
+    padding-right: 60px;
+    position: absolute;
+    left: 220px;
+    top: 0;
+    transform: translateY(calc(1100px * 3));
+    transition: 0.3s;
+    pointer-events: none;
+}
+/* ------ Start moving content ------*/
+main .servicesContent.servicesActive {
+    transform: translateY(0);
+    pointer-events: all;
+}
+main .servicesContent.portfolioActive {
+    transform: translateY(-1100px);
+    pointer-events: none;
+}
+main .servicesContent.blogActive {
+    transform: translateY(calc(-1100px * 2));
+    pointer-events: none;
+}
+main .servicesContent.contactActive {
+    transform: translateY(calc(-1100px * 3));
+    pointer-events: none;
+}
+/* ------ End moving content ------*/
+main .servicesContent .imgBox {
+    width: 60%;
+    margin-right: 50px;
+    position: relative;
+}
+main .servicesContent .imgBox svg {
+    width: 100%;
+    position: relative;
+    bottom: 130px;
+}
+main .servicesContent .content {
+    padding-top: 75px;
+}
+main .servicesContent .content h2 {
+    margin-bottom: 35px;
+    position: relative;
+    font-size: 30px;
+}
+main .servicesContent .content h2::before {
+    content: '';
+    position: absolute;
+    width: 145px;
+    height: 1.5px;
+    background: #2ECA7F;
+    bottom: -5px;
+}
+main .servicesContent .content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    width: 55px;
+    height: 9px;
+    background: #2ECA7F;
+    border-radius: 50px;
+}
+main .servicesContent .content p {
+    color: #6d6d6d;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+main .servicesContent .contact > .title {
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 17px;
+    color: #343A40;
+}
+main .servicesContent .contact > .title .detail {
+    font-weight: 400;
+    text-decoration: none;
+    color: #6d6d6d;
+}
+main .servicesContent .contact > .title a:hover {
+    color: #343A40;
+}
+main .servicesContent .contact .btn {
+    text-decoration: none;
+    display: inline-block;
+    background: #2ECA7F;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+main .servicesContent .contact .btn:hover {
+    border-color: #2ECA7F;
+    background: #fff;
+}
+main .servicesContent .contact .btn .icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+main .servicesContent .contact .btn:hover .icon {
+    background: #2ECA7F;
+}
+main .servicesContent .contact .btn .icon i {
+    color: #2ECA7F;
+    transition: 0.3s;
+}
+main .servicesContent .contact .btn:hover .icon i {
+    color: #fff;
+}
+main .servicesContent .contact .btn .title {
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+main .servicesContent .contact .btn:hover .title {
+    color: #2ECA7F;
+}
+
+/*=========================
+    End servicesContent
+===========================*/
+
+/*=========================
+    Start portfolioContent
+===========================*/
+
+.portfolioContent {
+    display: flex;
+    padding-right: 60px;
+    position: absolute;
+    left: 220px;
+    top: 0;
+    transform: translateY(calc(1100px * 4));
+    transition: 0.3s;
+    pointer-events: none;
+}
+/* ------ Start moving content ------*/
+main .portfolioContent.portfolioActive {
+    transform: translateY(0);
+    pointer-events: all;
+}
+main .portfolioContent.blogActive {
+    transform: translateY(-1100px);
+    pointer-events: none;
+}
+main .portfolioContent.contactActive {
+    transform: translateY(calc(-1100px * 2));
+    pointer-events: none;
+}
+/* ------ End moving content ------*/
+main .portfolioContent .imgBox {
+    width: 60%;
+    margin-right: 50px;
+    position: relative;
+}
+main .portfolioContent .imgBox svg {
+    width: 100%;
+    position: relative;
+    bottom: 100px;
+}
+main .portfolioContent .content {
+    padding-top: 75px;
+}
+main .portfolioContent .content h2 {
+    margin-bottom: 35px;
+    position: relative;
+    font-size: 30px;
+}
+main .portfolioContent .content h2::before {
+    content: '';
+    position: absolute;
+    width: 145px;
+    height: 1.5px;
+    background: #2ECA7F;
+    bottom: -5px;
+}
+main .portfolioContent .content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    width: 55px;
+    height: 9px;
+    background: #2ECA7F;
+    border-radius: 50px;
+}
+main .portfolioContent .content p {
+    color: #6d6d6d;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+main .portfolioContent .contact > .title {
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 17px;
+    color: #343A40;
+}
+main .portfolioContent .contact > .title .detail {
+    font-weight: 400;
+    text-decoration: none;
+    color: #6d6d6d;
+}
+main .portfolioContent .contact > .title a:hover {
+    color: #343A40;
+}
+main .portfolioContent .contact .btn {
+    text-decoration: none;
+    display: inline-block;
+    background: #2ECA7F;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+main .portfolioContent .contact .btn:hover {
+    border-color: #2ECA7F;
+    background: #fff;
+}
+main .portfolioContent .contact .btn .icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+main .portfolioContent .contact .btn:hover .icon {
+    background: #2ECA7F;
+}
+main .portfolioContent .contact .btn .icon i {
+    color: #2ECA7F;
+    transition: 0.3s;
+}
+main .portfolioContent .contact .btn:hover .icon i {
+    color: #fff;
+}
+main .portfolioContent .contact .btn .title {
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+main .portfolioContent .contact .btn:hover .title {
+    color: #2ECA7F;
+}
+
+/*=========================
+    End portfolioContent
+===========================*/
+
+/*=========================
+    Start blogContent
+===========================*/
+
+.blogContent {
+    display: flex;
+    padding-right: 60px;
+    position: absolute;
+    left: 220px;
+    top: 0;
+    transform: translateY(calc(1100px * 5));
+    transition: 0.3s;
+    pointer-events: none;
+}
+/* ------ Start moving content ------*/
+main .blogContent.blogActive {
+    transform: translateY(0);
+    pointer-events: all;
+}
+main .blogContent.contactActive {
+    transform: translateY(-1100px);
+    pointer-events: none;
+}
+/* ------ End moving content ------*/
+main .blogContent .imgBox {
+    width: 60%;
+    margin-right: 50px;
+    position: relative;
+}
+main .blogContent .imgBox svg {
+    width: 100%;
+    position: relative;
+    bottom: 10px;
+}
+main .blogContent .content {
+    padding-top: 75px;
+}
+main .blogContent .content h2 {
+    margin-bottom: 35px;
+    position: relative;
+    font-size: 30px;
+}
+main .blogContent .content h2::before {
+    content: '';
+    position: absolute;
+    width: 145px;
+    height: 1.5px;
+    background: #2ECA7F;
+    bottom: -5px;
+}
+main .blogContent .content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    width: 55px;
+    height: 9px;
+    background: #2ECA7F;
+    border-radius: 50px;
+}
+main .blogContent .content p {
+    color: #6d6d6d;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+main .blogContent .contact > .title {
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 17px;
+    color: #343A40;
+}
+main .blogContent .contact > .title .detail {
+    font-weight: 400;
+    text-decoration: none;
+    color: #6d6d6d;
+}
+main .blogContent .contact > .title a:hover {
+    color: #343A40;
+}
+main .blogContent .contact .btn {
+    text-decoration: none;
+    display: inline-block;
+    background: #2ECA7F;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+main .blogContent .contact .btn:hover {
+    border-color: #2ECA7F;
+    background: #fff;
+}
+main .blogContent .contact .btn .icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+main .blogContent .contact .btn:hover .icon {
+    background: #2ECA7F;
+}
+main .blogContent .contact .btn .icon i {
+    color: #2ECA7F;
+    transition: 0.3s;
+}
+main .blogContent .contact .btn:hover .icon i {
+    color: #fff;
+}
+main .blogContent .contact .btn .title {
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+main .blogContent .contact .btn:hover .title {
+    color: #2ECA7F;
+}
+
+/*=========================
+    End blogContent
+===========================*/
+
+/*=========================
+    Start contactContent
+===========================*/
+
+.contactContent {
+    display: flex;
+    padding-right: 60px;
+    position: absolute;
+    left: 220px;
+    top: 0;
+    transform: translateY(calc(1100px * 6));
+    transition: 0.3s;
+    pointer-events: none;
+}
+/* ------ Start moving content ------*/
+main .contactContent.contactActive {
+    transform: translateY(0);
+    pointer-events: all;
+}
+/* ------ End moving content ------*/
+main .contactContent .imgBox {
+    width: 60%;
+    margin-right: 50px;
+}
+main .contactContent .imgBox svg {
+    width: 100%;
+}
+main .contactContent .content {
+    padding-top: 75px;
+}
+main .contactContent .content h2 {
+    margin-bottom: 35px;
+    position: relative;
+    font-size: 30px;
+}
+main .contactContent .content h2::before {
+    content: '';
+    position: absolute;
+    width: 145px;
+    height: 1.5px;
+    background: #2ECA7F;
+    bottom: -5px;
+}
+main .contactContent .content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    width: 55px;
+    height: 9px;
+    background: #2ECA7F;
+    border-radius: 50px;
+}
+main .contactContent .content p {
+    color: #6d6d6d;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+main .contactContent .contact > .title {
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 17px;
+    color: #343A40;
+}
+main .contactContent .contact > .title .detail {
+    font-weight: 400;
+    text-decoration: none;
+    color: #6d6d6d;
+}
+main .contactContent .contact > .title a:hover {
+    color: #343A40;
+}
+main .contactContent .contact .btn {
+    text-decoration: none;
+    display: inline-block;
+    background: #2ECA7F;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+main .contactContent .contact .btn:hover {
+    border-color: #2ECA7F;
+    background: #fff;
+}
+main .contactContent .contact .btn .icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+main .contactContent .contact .btn:hover .icon {
+    background: #2ECA7F;
+}
+main .contactContent .contact .btn .icon i {
+    color: #2ECA7F;
+    transition: 0.3s;
+}
+main .contactContent .contact .btn:hover .icon i {
+    color: #fff;
+}
+main .contactContent .contact .btn .title {
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+main .contactContent .contact .btn:hover .title {
+    color: #2ECA7F;
+}
+
+/*=========================
+    End contactContent
+===========================*/
+
+
+
+/*=================
+media queries
+===================*/
+@media (min-width: 1250px) {
+    body {
+        background: #F8F9FA;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+    }
+}
+@media (max-width: 1250px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+    }
+    header {
+        padding: 10px 15px;
+    }
+    header .leftSide .imgBox {
+        width: 70px;
+    }
+    header .leftSide .text h1 {
+        font-size: 1.7rem;
+    }
+    header .leftSide .text p {
+        font-size: 15px;
+    }
+    header .rightSide p {
+        font-size: 15px;
+    }
+    header .rightSide ul li {
+        margin-right: 10px;
+    }
+    header .rightSide ul li a {
+        width: 30px;
+        height: 30px;
+    }
+    .homeContent .imgBox,
+    .aboutContent .imgBox,
+    .resumeContent .imgBox,
+    .servicesContent .imgBox,
+    .protfolioContent .imgBox,
+    .blogContent .imgBox,
+    .contactContent .imgBox {
+        min-width: 250px;
+        max-width: 450px;
+    }
+
+}
+@media (max-width: 1230px) {
+    main .homeContent,
+    main .aboutContent,
+    main .resumeContent,
+    main .servicesContent,
+    main .portfolioContent,
+    main .blogContent,
+    main .contactContent {
+        left: 0;
+        padding: 0 20px;
+    }
+    main .side {
+        position: absolute;
+        top: 0;
+        z-index: 10000;
+        border: none;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        transition: 0.5s ease;
+        visibility: hidden;
+        transform: translateX(-10000px);
+    }
+    main .side.active {
+        visibility: visible;
+        transform: translateX(0px);
+    }
+    main .side ul {
+        width: 100%;
+        align-items: center;
+        background: #3dee98;
+    }
+    main .side ul li {
+        margin: 12px 0;
+        padding: 10px 15px;
+        border-radius: 50px;
+    }
+    main .side ul li.active,
+    main .side ul li:hover {
+        color: #343A40;
+        background: #fff;
+    }
+    main .side ul li::before {
+        display: none;
+    }
+    main #toggle {
+        visibility: visible;
+        pointer-events: all;
+    }
+    main #toggle.active,
+    main #toggle:hover {
+        background: transparent;
+        border-color: #fff;
+    }
+    main #toggle:hover::before {
+        background: #fff;
+        box-shadow: 0 7px 0 #fff;
+    }
+    main #toggle:hover::after {
+        background: #fff;
+    }
+    main #toggle.active::before {
+        box-shadow: none;
+        background: #fff;
+        transform: translateY(0) rotate(45deg);
+    }
+    main #toggle.active::after {
+        background: #fff;
+        transform: translateY(0) rotate(-45deg);
+    }
+}
+@media (max-width: 700px) {
+    body {
+        width: 100%;
+        height: 100%;
+    }
+    .cardContainer {
+        width: 100%;
+        height: 900px;
+        border-radius: 0;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+        border-radius: 0;
+    }
+    header .leftSide {
+        margin-left: 10px;
+        align-self: center;
+    }
+    header .rightSide {
+        margin-left: 7px;
+    }
+    main #toggle {
+        top: -52px;
+        left: 100%;
+        transform: translateX(-120%);
+    }
+    main .homeContent,
+    main .aboutContent,
+    main .resumeContent,
+    main .servicesContent,
+    main .portfolioContent,
+    main .blogContent,
+    main .contactContent {
+        padding: 0 10px;
+        flex-direction: column;
+    }
+    main .homeContent .imgBox,
+    main .aboutContent .imgBox,
+    main .resumeContent .imgBox,
+    main .servicesContent .imgBox,
+    main .portfolioContent .imgBox,
+    main .blogContent .imgBox,
+    main .contactContent .imgBox {
+        width: 320px;
+        height: 250px;
+        margin: 10px auto;
+    }
+    main .homeContent .imgBox svg,
+    main .aboutContent .imgBox svg,
+    main .resumeContent .imgBox svg,
+    main .servicesContent .imgBox svg,
+    main .portfolioContent .imgBox svg,
+    main .blogContent .imgBox svg,
+    main .contactContent .imgBox svg {
+        height: 100%;
+        bottom: 0;
+    }
+    main .homeContent .content,
+    main .aboutContent .content,
+    main .resumeContent .content,
+    main .servicesContent .content,
+    main .portfolioContent .content,
+    main .blogContent .content,
+    main .contactContent .content {
+        padding-top: 0;
+    }
+}
